@@ -1,10 +1,14 @@
 package sort
 
+func Quick(data []int) {
+	quick(data, 0, len(data)-1)
+	return
+}
+
 // simple quick sort implementation
 func quick(data []int, lo, hi int) {
 
 	if hi-lo < 1 {
-
 		return
 	}
 	if hi-lo == 1 {

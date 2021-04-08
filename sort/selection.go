@@ -1,7 +1,7 @@
 package sort
 
 // returns new slice with input values sorted in ascending order
-func selection(input []int) []int {
+func Simple(input []int) []int {
 	l := len(input)
 	ret := make([]int, l)
 
@@ -33,15 +33,15 @@ func pop(i int, from []int) []int {
 		return from
 	}
 
+	ret := make([]int, 0, len(from)-1)
+
 	if i == 0 {
-		return from[1:]
+		return append(ret, from[1:]...)
 	}
 
 	if i == len(from)-1 {
-		return from[:len(from)-1]
+		return append(ret, from[:len(from)-1]...)
 	}
-
-	ret := make([]int, 0, len(from)-1)
 
 	ret = append(ret, from[:i]...)
 	ret = append(ret, from[i+1:]...)

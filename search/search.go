@@ -4,7 +4,7 @@ package search
 // index of the match or -1 if not found
 // linear time algorithm O(n)
 // works for unsorted slices
-func simple(value int, from []int) int {
+func Simple(value int, from []int) int {
 	for i, v := range from {
 		if v == value {
 			return i
@@ -18,7 +18,7 @@ func simple(value int, from []int) int {
 // returns -1 if value not found
 // logarithmic time algorithm O(log n)
 // works only for sorted slices
-func binary(value int, from []int) int {
+func Binary(value int, from []int) int {
 	low, high := 0, len(from)-1
 
 	for low <= high {
